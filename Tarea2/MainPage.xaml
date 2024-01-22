@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea2.MainPage">
+
+    <ScrollView>
+        <!--Establecemos dimensiones de los componentes de la pantalla (Utilizamos grid para establecer porcentajes de distrubucion y que se adapte a cualquier pantalla)-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            
+            <!--El primer row lo utilizamos para el titulo-->
+            <StackLayout Grid.Row="0" BackgroundColor="#59c639">
+                <Label Text="Tarea 3" VerticalTextAlignment="Center" FontSize="Large" Margin="5, 0, 0, 0"/>
+            </StackLayout>
+            
+            <!--Segundo row para el texto que se muestra en la pantalla-->
+            <StackLayout Grid.Row="1">
+                <Label Text="Resultado: " x:Name="label_resultado" Margin="5, 0, 0, 0"/>
+            </StackLayout>
+
+            <!--Tercer row para el entry donde escribiremos-->
+            <StackLayout Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Column="1" x:Name="entry_info"/>
+                </Grid>
+            </StackLayout>                             <!--El entry y el boton tienen sus propios grids para centrarlos en la pantalla acorde a sus dimensiones-->
+
+            <!--Cuarto row para el boton-->
+            <StackLayout Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="1" Text="Aceptar" BackgroundColor="#59c639" Clicked="Aceptar_Clicked"/>
+                </Grid>
+            </StackLayout>
+            
+            <!-- El ultimo row solo es para rellenar espacio y que no abarque todo-->
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
